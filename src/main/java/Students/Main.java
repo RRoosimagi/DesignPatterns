@@ -9,7 +9,6 @@ public class Main {
         students.addStudent("Junior Dwayne Johnson");
         students.addStudent("Senior Jane Doe");
         students.addStudent("Junior John Doe");
-        students.addStudent("Senior Dwayne Johnson");
 
         List<String> juniorStudents = students.getJuniorStudents();
         List<String> seniorStudents = students.getSeniorStudents();

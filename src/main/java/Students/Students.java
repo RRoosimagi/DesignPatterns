@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Students {
     private static volatile Students instance = null;
-    private List<String> studentNames;
+    private final List<String> studentNames;
 
     private Students() {
         studentNames = new ArrayList< >();
