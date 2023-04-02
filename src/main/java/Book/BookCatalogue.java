@@ -21,13 +21,13 @@ public class BookCatalogue {
 
     public List<Book> searchByAuthor(String author) {
         return books.stream()
-                .filter(book -> book.getAuthor().equalsIgnoreCase(author))
+                .filter(book -> book.getAuthor().equals(author))
                 .collect(Collectors.toList());
     }
 
     public List<Book> searchByTitle(String title) {
         return books.stream()
-                .filter(book -> book.getTitle().equalsIgnoreCase(title))
+                .filter(book -> book.getTitle().equals(title))
                 .collect(Collectors.toList());
     }
 
