@@ -10,8 +10,8 @@ public class GuessTheNumber {
     private boolean gameRunning = true;
 
     public GuessTheNumber() {
-        Random rand = new Random();
-        secretNumber = rand.nextInt(100) + 1;
+        Random random = new Random();
+        secretNumber = random.nextInt(100) + 1;
         attemptsLeft = maxAttempts;
     }
 
