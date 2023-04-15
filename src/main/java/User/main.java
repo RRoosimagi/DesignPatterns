@@ -8,7 +8,7 @@ public class main {
                 .setAge(39)
                 .setEmail("rroosimagi@gmail.com")
                 .setPhone("+37253056107")
-                .setAddress("Ketshup 23, Las Ketshup, 44311")
+                .setAddress("Ketshap st 23, Las Ketshup, 44311")
                 .build();
 
     }

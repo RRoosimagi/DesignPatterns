@@ -4,55 +4,42 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Students {
-    private static volatile Students instance = null;
-    private final List<String> studentNames;
+    private static Students instance = null;
+    private final List<String> seniorStudents;
+    private final List<String> juniorStudents;
 
     private Students() {
-        studentNames = new ArrayList< >();
+        seniorStudents = new ArrayList<>();
+        juniorStudents = new ArrayList<>();
     }
 
-    public static Students getInstance() {
+    public static synchronized Students getInstance() {
         if (instance == null) {
-            synchronized (Students.class) {
-                if (instance == null) {
-                    instance = new Students();
-                }
-            }
+            instance = new Students();
         }
         return instance;
     }
 
     public boolean addStudent(String name) {
+        if (name.startsWith("Junior") && !juniorStudents.contains(name)) {
 
-        if (!name.toLowerCase().startsWith("senior") && !name.toLowerCase().startsWith("junior")) {
+            juniorStudents.add(name);
+            return true;
+        } else if (name.startsWith("Senior") && !seniorStudents.contains(name)) {
+
+            seniorStudents.add(name);
+            return true;
+        } else {
+
             return false;
         }
-
-        if (studentNames.contains(name)) {
-            return false;
-        }
-
-        studentNames.add(name);
-        return true;
     }
 
     public List<String> getSeniorStudents() {
-        List<String> seniorStudents = new ArrayList< >();
-        for (String name : studentNames) {
-            if (name.toLowerCase().startsWith("senior")) {
-                seniorStudents.add(name);
-            }
-        }
-        return seniorStudents;
+        return new ArrayList<>(seniorStudents);
     }
 
     public List<String> getJuniorStudents() {
-        List<String> juniorStudents = new ArrayList< >();
-        for (String name : studentNames) {
-            if (name.toLowerCase().startsWith("junior")) {
-                juniorStudents.add(name);
-            }
-        }
-        return juniorStudents;
+        return new ArrayList<>(juniorStudents);
     }
 }

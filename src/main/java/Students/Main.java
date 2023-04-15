@@ -9,6 +9,7 @@ public class Main {
         System.out.println(students.addStudent("Junior Dwayne Johnson"));
         System.out.println(students.addStudent("Senior Jane Doe"));
         System.out.println(students.addStudent("Junior John Doe"));
+        System.out.println(students.addStudent("Senior Dwayne Johnson"));
 
         List<String> juniorStudents = students.getJuniorStudents();
         List<String> seniorStudents = students.getSeniorStudents();
