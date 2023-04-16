@@ -4,9 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Password {
-
-
-        public static void main(String[] args) {
+    public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
             System.out.print("Enter password length (minimum 10): ");
             int length = scanner.nextInt();
@@ -22,7 +20,7 @@ public class Password {
         }
 
         public static String generatePassword(int length) {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder stringBuilder = new StringBuilder();
             Random random = new Random();
 
             String upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -31,17 +29,17 @@ public class Password {
             String allChars = upper + lower + digits;
 
             // Generate at least one uppercase letter, one lowercase letter, and one digit
-            sb.append(upper.charAt(random.nextInt(upper.length())));
-            sb.append(lower.charAt(random.nextInt(lower.length())));
-            sb.append(digits.charAt(random.nextInt(digits.length())));
+            stringBuilder.append(upper.charAt(random.nextInt(upper.length())));
+            stringBuilder.append(lower.charAt(random.nextInt(lower.length())));
+            stringBuilder.append(digits.charAt(random.nextInt(digits.length())));
 
             // Fill the rest of the password with random characters
-            for (int i = 0; i < length - 3; i++) {
-                sb.append(allChars.charAt(random.nextInt(allChars.length())));
+            for (int i = 0; i < length; i++) {
+                stringBuilder.append(allChars.charAt(random.nextInt(allChars.length())));
             }
 
             // Shuffle the password to randomize the order of the characters
-            char[] passwordChars = sb.toString().toCharArray();
+            char[] passwordChars = stringBuilder.toString().toCharArray();
             for (int i = 0; i < passwordChars.length; i++) {
                 int randomIndex = random.nextInt(passwordChars.length);
                 char temp = passwordChars[i];
