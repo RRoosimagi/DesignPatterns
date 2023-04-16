@@ -8,11 +8,11 @@ public class BookTest {
         System.out.println("Book 1");
         System.out.println("Author: " + book1.getAuthor());
         System.out.println("Title: \"" + book1.getTitle() + "\"");
-        System.out.println("Price: €" + book1.getPrice());
+        System.out.println("Price: " + book1.getPrice()+ " € ");
 
         System.out.println("Book 2");
         System.out.println("Author: " + book2.getAuthor());
         System.out.println("Title: \"" + book2.getTitle() + "\"");
-        System.out.println("Price: €" + book2.getPrice());
+        System.out.println("Price: " + book2.getPrice()+ " € ");
     }
 }
