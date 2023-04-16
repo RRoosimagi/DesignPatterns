@@ -7,7 +7,7 @@ public class BookTest {
         Book book3 = new Book("Game of Thrones", " George R. R. Martin", 34);
         Book book4 = new Book("Head First Java", "Sierra & Bates", 65);
 
-        System.out.println("Book 1);
+        System.out.println("Book 1");
         System.out.println("Author: " + book1.getAuthor());
         System.out.println("Title: \"" + book1.getTitle() + "\"");
         System.out.println("Price: " + book1.getPrice()+ " € ");
