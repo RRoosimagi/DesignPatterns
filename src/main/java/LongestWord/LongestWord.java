@@ -1,6 +1,7 @@
 package LongestWord;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class LongestWord {
@@ -12,7 +13,7 @@ public class LongestWord {
             String input = scanner.nextLine();
             String[] words = input.split("\\s+");
             String longest = Arrays.stream(words)
-                    .max((a, b) -> Integer.compare(a.length(), b.length()))
+                    .max(Comparator.comparingInt(String::length))
                     .orElse("");
             System.out.println("Longest word: " + longest);
         }
